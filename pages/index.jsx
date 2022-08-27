@@ -1,18 +1,10 @@
-import { useState } from "react";
-
 import AppContainer from "../components/AppContainer/AppContainer";
 import Landing from "../components/Landing";
-import About from "../components/About";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Home = () => {
-  const [start, setStart] = useState(false);
-
-  const startSetter = (event) => {
-    setStart(event);
-  };
-
   return (
     <div>
       <Head>
@@ -25,8 +17,7 @@ const Home = () => {
       </Head>
 
       <AppContainer>
-        <Landing startSetter={startSetter} />
-        {start && <About />}
+        <Landing />
       </AppContainer>
     </div>
   );

@@ -91,3 +91,10 @@ input {
 .navbarButton {
   @apply min-w-[100px] px-3 py-1 rounded-sm text-center hover:bg-primary duration-150
 }
+
+.background {
+    background-image: url("../assets/fondo_1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
