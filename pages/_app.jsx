@@ -8,10 +8,8 @@ import { NextUIProvider } from "@nextui-org/react";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    chain.mainnet,
     chain.polygon,
-    chain.optimism,
-    chain.arbitrum,
+    chain.polygonMumbai,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
       ? [chain.goerli, chain.kovan, chain.rinkeby, chain.ropsten]
       : []),
@@ -43,7 +41,6 @@ function MyApp({ Component, pageProps }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <NextUIProvider disableBaseline>
-          
           <Component {...pageProps} />
         </NextUIProvider>
       </RainbowKitProvider>
