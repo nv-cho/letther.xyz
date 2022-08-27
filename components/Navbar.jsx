@@ -7,7 +7,6 @@ import { Context } from "../context/context";
 
 import { useDisconnect } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { disconnect } from "process";
 
 const NavbarComponent = () => {
   const [firstRender, setFirstRender] = useState(true);
@@ -15,6 +14,7 @@ const NavbarComponent = () => {
   const router = useRouter();
 
   const { isConnected } = useContext(Context);
+  const { disconnect } = useDisconnect();
 
   useEffect(() => {
     setFirstRender(false);
@@ -22,35 +22,51 @@ const NavbarComponent = () => {
 
   return (
     !firstRender && (
-      <nav className="flex flex-row mt-2 p-1 justify-between items-center">
-        🎶
-        <ul className="flex flex-row gap-10">
-          <li
-            className={`navbarButton ${
-              router.pathname == "/" && "bg-green-300/80"
-            }`}
-          >
-            <Link href="/">Home</Link>
-          </li>
+      <nav className="flex flex-row p-1 items-center mt-6 justify-between">
+        <div className="flex items-center">
+          <p className="text-[95px]">L</p>
+          <ul className="flex flex-row gap-[13px] ml-10">
+            <li
+              className={`navbarButton ${
+                router.pathname == "/" && "bg-green-300/80"
+              }`}
+            >
+              <Link href="/">Home</Link>
+            </li>
 
-          <li
-            className={`navbarButton ${
-              router.pathname === "/explore" && "bg-green-300/80"
-            }`}
-          >
-            <Link href="/explore">Explore</Link>
-          </li>
+            <li
+              className={`navbarButton ${
+                router.pathname === "/explore" && "bg-green-300/80"
+              }`}
+            >
+              <Link href="/explore">Explore</Link>
+            </li>
 
-          <li
-            className={`navbarButton ${
-              router.pathname === "/ask" && "bg-green-300/80"
-            }`}
-          >
-            <Link href="/ask">Ask</Link>
-          </li>
-        </ul>
+            <li
+              className={`navbarButton ${
+                router.pathname === "/ask" && "bg-green-300/80"
+              }`}
+            >
+              <Link href="/ask">Questions</Link>
+            </li>
+          </ul>
+        </div>
+
         {isConnected != true ? (
-          <ConnectButton />
+          <div>
+            <ConnectButton.Custom>
+              {({ openConnectModal }) => {
+                return (
+                  <button
+                    className="bg-white text-[#1D1D42] py-2 px-3 rounded-sm shadow-lg"
+                    onClick={openConnectModal}
+                  >
+                    Connect Wallet
+                  </button>
+                );
+              }}
+            </ConnectButton.Custom>
+          </div>
         ) : (
           <div>
             <button
@@ -72,7 +88,7 @@ const NavbarComponent = () => {
                     <Link href="/profile">Profile</Link>
                   </li>
                   <li className="min-w-[100px] px-3 py-1 rounded-sm text-center hover:bg-red-300/80 duration-150 border-t p-2">
-                    <button onClick={() => disconnect}>Logout</button>
+                    <button onClick={() => disconnect()}>Sign out</button>
                   </li>
                 </ul>
               </div>

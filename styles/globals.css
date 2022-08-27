@@ -10,6 +10,7 @@ body,
 #__next > div > div > div {
   @apply h-full;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
