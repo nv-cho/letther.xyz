@@ -86,3 +86,7 @@ input {
 .text-shadow {
   @apply drop-shadow-[0_0_7px_rgba(0,0,0,0.5)];
 }
+
+.navbarButton {
+  @apply min-w-[100px] px-3 py-1 rounded-sm text-center hover:bg-green-300/80 duration-150
+}
