@@ -13,6 +13,7 @@ Problema principal: LAS PLATAFORMAS DE REDACCIÓN PRINCIPAL PENSARON QUE PODÍAN
 
 Visitar el documento completo aquí. English version below
 
-https://docs.google.com/document/d/1oWT-iqwA3cHBGqO4J5AtihUWObV0qV8EJ4O9vezIUeg/edit?usp=sharing <br />
+https://docs.google.com/document/d/1oWT-iqwA3cHBGqO4J5AtihUWObV0qV8EJ4O9vezIUeg/edit?usp=sharing 
 
+<br />
 Project for MediaParty 2022 Hackathon
