@@ -15,13 +15,11 @@ const Navbar = () => {
     setFirstRender(false);
   }, []);
 
-  const handleLogout = () => {
-
-  };
+  const handleLogout = () => {};
 
   return (
     !firstRender && (
-      <nav className="flex flex-row mt-2 p-1 justify-evenly items-center">
+      <nav className="flex flex-row mt-2 p-1 justify-between items-center">
         🎶
         <ul className="flex flex-row gap-10">
           <li className="navbarButton">
