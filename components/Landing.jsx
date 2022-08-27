@@ -15,9 +15,9 @@ const Landing = () => {
 
         <button
           onClick={handler}
-          className="bg-green-200/30 py-8 px-4 rounded-lg shadow-lg hover:-translate-y-3 duration-150"
+          className="bg-green-100/20 py-8 px-4 rounded-lg shadow-lg hover:-translate-y-3 duration-150"
         >
-          <p className="text-[60px] text-center text-green-200">GET STARTED</p>
+          <p className="text-[60px] text-center text-primary/90">GET STARTED</p>
         </button>
       </div>
     </>

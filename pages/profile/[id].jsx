@@ -14,7 +14,7 @@ const Profile = () => {
   const { id } = router.query;
 
   const [profile, setProfile] = useState(null);
-  const [loadingProfile, setLoadingProfile] = useState(true);
+  const [loadingProfile, setLoadingProfile] = useState(false);
 
   const [publications, setPublications] = useState(null);
   const [loadingPublications, setLoadingPublications] = useState(true);
@@ -24,7 +24,7 @@ const Profile = () => {
       const response = await client.query(getProfile, { id }).toPromise();
       console.log(response.data.profile);
       setProfile(response.data.profile);
-      setLoadingProfile(false);
+      // setLoadingProfile(false);
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +50,7 @@ const Profile = () => {
 
   return (
     <AppContainer>
-      {loadingProfile && <p>Loading Profile</p>}
+      {loadingProfile && <p className="text-lg mt-4">Loading Profile...</p>}
       {!loadingProfile && profile && (
         <div className="relative">
           {profile?.coverPicture?.original.url ? (

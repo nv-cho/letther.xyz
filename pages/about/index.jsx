@@ -4,16 +4,12 @@ import Link from "next/link";
 const About = () => {
   return (
     <AppContainer>
-      <div className="flex flex-col h-full gap-[230px] justify-center items-start">
-        <div className="flex flex-col gap-10">
-          <p className="text-[60px] text-center">Letther - ask the eter</p>
+      <div className="flex flex-col h-full justify-between items-start my-16">
+        <div className="flex flex-col">
+          <p className="text-[60px] text-center">Letther - Asking in the ether</p>
           <div className="flex flex-row gap-5 items-center">
             <button className="shadow-lg hover:-translate-y-3 duration-150">
-              <a
-                href="https://twitter.com/lettherxyz"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://twitter.com/lettherxyz" target="_blank" rel="noreferrer">
                 <svg
                   width="40"
                   height="80"
@@ -32,11 +28,7 @@ const About = () => {
             </button>
 
             <button className="shadow-lg hover:-translate-y-3 duration-150">
-              <a
-                href="https://discord.gg/7Yj4nufXmt"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://discord.gg/7Yj4nufXmt" target="_blank" rel="noreferrer">
                 <svg
                   width="40"
                   height="67"
@@ -55,7 +47,7 @@ const About = () => {
         </div>
 
         <button className="bg-green-200/30 py-6 px-7 rounded-lg shadow-lg hover:-translate-y-3 duration-150">
-          <p className="text-[30px] text-center text-green-200">MANIFEST</p>
+          <p className="text-[30px] text-center text-primary/90">MANIFEST</p>
         </button>
       </div>
     </AppContainer>
