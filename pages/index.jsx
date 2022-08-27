@@ -1,6 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Head from "next/head";
 
+import AppContainer from "../components/AppContainer/AppContainer";
 const Home = () => {
   return (
     <div>
@@ -10,16 +11,12 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* FULL WIDTH CONTAINER WITH BACKGROUND */}
-      <div className="w-full h-full bg-gradient flex justify-center text-white">
-        {/* APP CONTAINER 11/12 WIDTH  */}
-        <div className="w-11/12 border-2 h-full flex flex-col">
-          <nav className="w-full flex items-center justify-between border-b-2 border-black/50">
-            <h1>letter.xyz</h1>
-            <ConnectButton />
-          </nav>
-        </div>
-      </div>
+      <AppContainer>
+        <nav className="w-full flex items-center justify-between border-b-2 border-black/50">
+          <h1>letter.xyz</h1>
+          <ConnectButton />
+        </nav>
+      </AppContainer>
     </div>
   );
 };
