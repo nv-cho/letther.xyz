@@ -4,7 +4,6 @@ import { useAccount } from "wagmi";
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const [state, setState] = useState(undefined);
 
   const { address, isConnected } = useAccount();
 

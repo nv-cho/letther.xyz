@@ -15,7 +15,7 @@ const Home = () => {
       </Head>
 
       <AppContainer>
-        <NavbarComponent />
+        <h2>Home Landing Page</h2>
       </AppContainer>
     </div>
   );

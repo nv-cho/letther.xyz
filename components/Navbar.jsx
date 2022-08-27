@@ -3,11 +3,11 @@ import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { useDisconnect } from "wagmi";
-
 import { Context } from "../context/context";
 
+import { useDisconnect } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { disconnect } from "process";
 
 const NavbarComponent = () => {
   const [firstRender, setFirstRender] = useState(true);
@@ -15,7 +15,6 @@ const NavbarComponent = () => {
   const router = useRouter();
 
   const { isConnected } = useContext(Context);
-  const { disconnect } = useDisconnect();
 
   useEffect(() => {
     setFirstRender(false);
@@ -73,7 +72,7 @@ const NavbarComponent = () => {
                     <Link href="/profile">Profile</Link>
                   </li>
                   <li className="min-w-[100px] px-3 py-1 rounded-sm text-center hover:bg-red-300/80 duration-150 border-t p-2">
-                    <button onClick={() => disconnect()}>Sign out</button>
+                    <button onClick={() => disconnect}>Logout</button>
                   </li>
                 </ul>
               </div>
