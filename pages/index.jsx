@@ -1,8 +1,18 @@
-import Head from "next/head";
-import NavbarComponent from "../components/Navbar";
+import { useState } from "react";
 
 import AppContainer from "../components/AppContainer/AppContainer";
+import Landing from "../components/Landing";
+import About from "../components/About";
+
+import Head from "next/head";
+
 const Home = () => {
+  const [start, setStart] = useState(false);
+
+  const startSetter = (event) => {
+    setStart(event);
+  };
+
   return (
     <div>
       <Head>
@@ -15,7 +25,8 @@ const Home = () => {
       </Head>
 
       <AppContainer>
-        <h2>Home Landing Page</h2>
+        <Landing startSetter={startSetter} />
+        {start && <About />}
       </AppContainer>
     </div>
   );

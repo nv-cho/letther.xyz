@@ -55,7 +55,7 @@ const Profile = () => {
         <div className="relative">
           {profile?.coverPicture?.original.url ? (
             <img
-              className="w-full h-60 object-cover"
+              className="w-full h-60 object-cover "
               src={profile?.coverPicture?.original.url}
               alt="profile cover picture"
             />
@@ -65,30 +65,47 @@ const Profile = () => {
 
           {profile?.picture?.original?.url ? (
             <img
-              className="rounded-full h-24 w-24 absolute translate-y-[-60%] translate-x-[20%]"
+              className="rounded-full h-24 w-24 absolute translate-y-[-60%] translate-x-[20%] border-[2px] border-black"
               src={profile?.picture?.original?.url}
               alt={"profile picture"}
             />
           ) : (
-            <div className="bg-gray-100/70 rounded-full h-24 w-24 absolute translate-y-[-60%] translate-x-[20%]" />
+            <div className="bg-gray-100/70 rounded-full h-24 w-24 absolute translate-y-[-60%] translate-x-[20%] border-[2px] border-black" />
           )}
           <div className="mt-10 px-2">
-            <div className="flex  items-center justify-between mb-2">
+            <div className="flex  items-center justify-between mb-5">
               <h3 className="flex items-center">
-                {profile?.handle ? profile?.handle : "unknown handle"}
-                <button className="btn ml-2">Follow</button>
+                {profile?.handle ? profile?.handle : ""}
+                <button className="btn !bg-primary ml-2 " disabled={true}>
+                  Follow
+                </button>
               </h3>
               <div className="flex">
-                <p className="mr-6">Reputation balance: {USER_TOKENS} $RPN</p>
+                <p className="mr-6">
+                  Reputation balance: <span className="text-primary">{USER_TOKENS} $RPN</span>
+                </p>
                 <p className="mx-1">Questions Made: {USER_QUESTIONS}</p>
                 <p className="mx-1 mr-6">Posts: {profile?.stats?.totalPosts}</p>
                 <p className="mx-1">Followers: {profile?.stats?.totalFollowers}</p>
                 <p className="mx-1">Following: {profile?.stats?.totalFollowing}</p>
-                {/* <p className="mx-1">Collects: {profile?.stats?.totalCollects}</p> */}
               </div>
             </div>
 
-            <p>{profile?.bio ? profile?.bio : "unknown bio"}</p>
+            <p className="mb-6">{profile?.bio ? profile?.bio : ""}</p>
+
+            <div className="h-20 flex">
+              <div className="w-full">
+                <h3>Recent posts</h3>
+              </div>
+              <div className="w-full flex flex-col items-end">
+                <span className="mb-2 flex items-center text-[1.09rem]">
+                  Next Reputation milestone: <span className="text-primary ml-1"> 100 $RPN</span>
+                </span>
+                <button className="rounded-md bg-primary/50 py-2 px-4" disabled>
+                  Proof of Reputation not available yet
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}
