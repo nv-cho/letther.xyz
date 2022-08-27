@@ -7,6 +7,7 @@ import { getProfile, getUserPublications } from "../api/queries";
 
 // const USER_QUESTIONS = Math.floor(Math.random() * 20);
 const USER_QUESTIONS = 8;
+const USER_TOKENS = 5;
 
 const Profile = () => {
   const router = useRouter();
@@ -49,7 +50,6 @@ const Profile = () => {
 
   return (
     <AppContainer>
-      <h1>Profile section</h1>
       {loadingProfile && <p>Loading Profile</p>}
       {!loadingProfile && profile && (
         <div className="relative">
@@ -79,8 +79,9 @@ const Profile = () => {
                 <button className="btn ml-2">Follow</button>
               </h3>
               <div className="flex">
+                <p className="mr-6">Reputation balance: {USER_TOKENS} $RPN</p>
                 <p className="mx-1">Questions Made: {USER_QUESTIONS}</p>
-                <p className="mx-1">Posts: {profile?.stats?.totalPosts}</p>
+                <p className="mx-1 mr-6">Posts: {profile?.stats?.totalPosts}</p>
                 <p className="mx-1">Followers: {profile?.stats?.totalFollowers}</p>
                 <p className="mx-1">Following: {profile?.stats?.totalFollowing}</p>
                 {/* <p className="mx-1">Collects: {profile?.stats?.totalCollects}</p> */}

@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     !firstRender && (
-      <nav className="flex flex-row mt-2 p-1 justify-between items-center">
+      <nav className="flex flex-row mt-2 p-1 justify-between items-center mb-0.5">
         🎶
         <ul className="flex flex-row gap-10">
           <li className="navbarButton">
@@ -42,13 +42,16 @@ const Navbar = () => {
               onClick={() => {
                 setToggle(!toggle);
               }}
-              className="w-12 cursor-pointer rounded-full border-2 border-green-200"
+              className="cursor-pointer rounded-full border-2 border-green-200"
             >
-              <img className="rounded-full" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+              <img
+                className="rounded-full w-10 h-10"
+                src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+              />
             </button>
 
             {toggle && (
-              <div className="min-w-[100px] absolute bg-white text-[#1D1D42] rounded-lg shadow-lg overflow-hidden mt-2">
+              <div className="min-w-[100px] absolute bg-white text-[#1D1D42] rounded-lg shadow-lg overflow-hidden mt-2 z-10">
                 <ul className="flex flex-col">
                   <li className="navbarButton border-b p-2">
                     <Link href="/profile/0x02">Profile</Link>
