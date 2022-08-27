@@ -1,4 +1,4 @@
-# Letther.xyz - Pregunta en el éter <br />
+# Letther.xyz - Pregunta al éter <br />
 Qué problema estamos resolviendo con este proyecto y sus principios:
 
 Descubrimos que hoy en día la web3, las criptomonedas y el metaverso son temas que evolucionan rápidamente, y el periodismo tradicional no puede ir a su velocidad. De esta manera, hay nuevos temas que aparecen cada día, que no son cubiertos/explicados por ningún artículo en Internet. Queremos ayudar a los escritores a ser descubiertos, a ganar reputación y a ser recompensados por hacer contenidos de calidad, que satisfagan las nuevas preguntas que aparecen relacionadas con las tecnologías emergentes.
