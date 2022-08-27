@@ -1,6 +1,7 @@
 import Head from "next/head";
 import NavbarComponent from "../components/Navbar";
 
+import AppContainer from "../components/AppContainer/AppContainer";
 const Home = () => {
   return (
     <div>
@@ -13,14 +14,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* FULL WIDTH CONTAINER WITH BACKGROUND */}
-      <div className="w-full h-full bg-gradient flex justify-center text-white">
-        {/* APP CONTAINER 11/12 WIDTH  */}
-        <div className="w-11/12 border-2 h-full flex flex-col">
-          {/* NAVBAR */}
-          <NavbarComponent />
-        </div>
-      </div>
+      <AppContainer>
+        <NavbarComponent />
+      </AppContainer>
     </div>
   );
 };
