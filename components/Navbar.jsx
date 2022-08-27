@@ -3,6 +3,8 @@ import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
+import { useDisconnect } from "wagmi";
+
 import { Context } from "../context/context";
 
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -13,6 +15,7 @@ const NavbarComponent = () => {
   const router = useRouter();
 
   const { isConnected } = useContext(Context);
+  const { disconnect } = useDisconnect();
 
   useEffect(() => {
     setFirstRender(false);
@@ -23,16 +26,28 @@ const NavbarComponent = () => {
       <nav className="flex flex-row mt-2 p-1 justify-evenly items-center">
         🎶
         <ul className="flex flex-row gap-10">
-          <li className="navbarButton">
+          <li
+            className={`navbarButton ${
+              router.pathname == "/" && "bg-green-300/80"
+            }`}
+          >
             <Link href="/">Home</Link>
           </li>
 
-          <li className="navbarButton">
-            <Link href="/about">Explore</Link>
+          <li
+            className={`navbarButton ${
+              router.pathname === "/explore" && "bg-green-300/80"
+            }`}
+          >
+            <Link href="/explore">Explore</Link>
           </li>
 
-          <li className="navbarButton">
-            <Link href="/contact">Ask</Link>
+          <li
+            className={`navbarButton ${
+              router.pathname === "/ask" && "bg-green-300/80"
+            }`}
+          >
+            <Link href="/ask">Ask</Link>
           </li>
         </ul>
         {isConnected != true ? (
@@ -58,7 +73,7 @@ const NavbarComponent = () => {
                     <Link href="/profile">Profile</Link>
                   </li>
                   <li className="min-w-[100px] px-3 py-1 rounded-sm text-center hover:bg-red-300/80 duration-150 border-t p-2">
-                    <Link href="/logout">Logout</Link>
+                    <button onClick={() => disconnect()}>Sign out</button>
                   </li>
                 </ul>
               </div>
