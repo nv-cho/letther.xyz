@@ -5,6 +5,9 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { NextUIProvider } from "@nextui-org/react";
+import { darkTheme } from "@rainbow-me/rainbowkit";
+
+import { ContextProvider } from "../context/context";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
@@ -41,10 +44,11 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }) {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains} theme={darkTheme()} coolMode>
         <NextUIProvider disableBaseline>
-          
-          <Component {...pageProps} />
+          <ContextProvider>
+            <Component {...pageProps} />
+          </ContextProvider>
         </NextUIProvider>
       </RainbowKitProvider>
     </WagmiConfig>

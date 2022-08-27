@@ -9,6 +9,7 @@ body,
 #__next > div > div,
 #__next > div > div > div {
   @apply h-full;
+  color: white;
 }
 
 h1 {

@@ -1,9 +1,12 @@
 import { createContext, useState } from "react";
+import { useAccount } from "wagmi";
 
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [state, setState] = useState(undefined);
+
+  const { address, isConnected } = useAccount();
 
   // Transfer(address from, address to, uint256 tokenId);
   //   useContractEvent({
@@ -15,5 +18,9 @@ export const ContextProvider = ({ children }) => {
   //     },
   //   });
 
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ address, isConnected }}>
+      {children}
+    </Context.Provider>
+  );
 };
